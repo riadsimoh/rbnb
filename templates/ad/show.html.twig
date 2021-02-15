@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos annonces!
+{% endblock %}
+
+{% block body %}
+
+	<div class="ad-title-1" style="background-image: url({{ad.coverImage}})">
+
+		<div class=" container">
+			<h1>{{ad.title}}</h1>
+			<p>{{ad.introduction}}</p>
+
+			<p class="h2">
+				<strong>{{ad.rooms}}
+					chambres</strong>
+				pour
+				<strong>{{ad.price}}&euro;</strong>
+				par nuit
+
+			</p>
+			<a href="" class="btn btn-primary">
+				Reserver!</a>
+
+
+		</div>
+	</div>
+
+
+	<div class="container mt-5">
+		<div class=" row">
+			<div class="col-sm-6  mx-auto">
+				{{ad.content | raw}}
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						{% for image in ad.images  %}
+							<li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" class="{% if loop.first %} active {% endif %}"></li>
+						{% endfor %}
+					</ol>
+					<div class="carousel-inner">
+
+						{% for image in ad.images %}
+							<div class="carousel-item {% if loop.first %} active {% endif %}">
+								<img src="{{ image.url }}" class="d-block w-100" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>{{ ad.title}}</h5>
+									<p>{{ image.caption}}</p>
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+				<div class="row">
+					<div class="col-sm-4">
+						<img src="http://placehold.it/64x64" alt="photo de profile">
+					</div>
+					<div class="col">
+						<h3>Josef dupon</h3>
+						<p class="badge badge-primary">
+							3 annonces</p>
+
+					</div>
+				</div>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eligendi id quibusdam tenetur earum odit deserunt pariatur atque animi ex? Nesciunt omnis temporibus asperiores quo doloremque inventore ullam blanditiis exercitationem?</p>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+</div>{% endblock %}

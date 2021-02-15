@@ -1,0 +1,25 @@
+.ad-title p, .ad-title h1 {
+
+
+  color: rgb(0, 0, 0);
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+} 
+
+.ad-title-1 {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+  padding: 2.5em;
+}
+div.carousel-caption {
+
+
+  color: #fff;
+  text-shadow: 3px 3px 3px rgba(0, 0,0, 0.5);
+}
+div.carousel-caption h5{
+
+
+  color: #fff;
+  text-shadow: 3px 3px 3px rgba(0, 0,0, 0.5);
+}
