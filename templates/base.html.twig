@@ -47,7 +47,30 @@
 
 			</div>
 		</nav>
+
+		{% for label, messages in app.flashes %}
+			<div class="container">
+				<div class="alert-{{label}}">
+					{% for message in messages %}
+						<p>
+							{{message}}</p>
+
+
+					{% endfor %}
+				</div>
+
+
+			</div>
+
+
+		{% endfor %}
 		{% block body %}{% endblock %}
+
+		<div class="footer bg-primary p-3 text-center text-dark mt-3">
+			Copywrite Rbnb
+
+
+		</div>
 
 
 		{% block javascripts %}

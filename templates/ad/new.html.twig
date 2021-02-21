@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	{% form_theme form _self %}
+
+	<div class="container ">
+		<h3>new ad</h3>
+
+		{{form_start(form)}}
+		{{form_widget(form)}}
+
+		<button type="submit" class="btn btn-primary">Enregister</button>
+		{{form_end(form)}}
+
+	</div>
+
+{% endblock %}
+
+{% block _ad_images_widget %}
+
+	<p>Ici vous pouvez ajouter vos props images</p>
+
+	{{form_widget(form)}}
+	<button type="button" id="add-image" class="btn btn-primary">Ajouter une image</button>
+
+
+{% endblock  %}
+
+{% block _ad_images_entry_widget %}
+	<div class="form-group">
+		<div class="row">
+			<div class="col">
+				{{form_widget(form.url)}}
+
+
+			</div>
+			<div class="col">
+				{{form_widget(form.caption)}}</div>
+		</div>
+
+
+	</div>
+
+{% endblock %}
+
+{% block _ad_images_entry_row %}
+
+	{{form_widget(form)}}
+
+
+{% endblock %}
